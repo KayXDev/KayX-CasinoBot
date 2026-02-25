@@ -1,0 +1,50 @@
+-- Tabla para solicitudes de servidores en discovery
+CREATE TABLE IF NOT EXISTS server_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    server_name VARCHAR(255) NOT NULL,
+    server_description TEXT NOT NULL,
+    invite_link VARCHAR(500) NOT NULL,
+    members VARCHAR(50) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    features JSON,
+    image VARCHAR(500),
+    submitted_by VARCHAR(255) NOT NULL,
+    submitted_by_id VARCHAR(50) NOT NULL,
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    admin_notes TEXT,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    reviewed_at TIMESTAMP NULL,
+    reviewed_by VARCHAR(50) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_status (status),
+    INDEX idx_submitted_by_id (submitted_by_id),
+    INDEX idx_category (category),
+    INDEX idx_submitted_at (submitted_at)
+);
+
+-- Tabla para servidores aprobados/destacados
+CREATE TABLE IF NOT EXISTS featured_servers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    server_name VARCHAR(255) NOT NULL,
+    server_description TEXT NOT NULL,
+    invite_link VARCHAR(500) NOT NULL,
+    members VARCHAR(50) NOT NULL,
+    online_members VARCHAR(50),
+    category VARCHAR(100) NOT NULL,
+    features JSON,
+    image VARCHAR(500),
+    verified BOOLEAN DEFAULT FALSE,
+    featured BOOLEAN DEFAULT FALSE,
+    growth VARCHAR(10),
+    tags JSON,
+    level VARCHAR(50) DEFAULT 'Advanced',
+    color VARCHAR(100) DEFAULT 'from-casino-500 to-purple-500',
+    icon VARCHAR(50) DEFAULT 'Shield',
+    added_by VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_category (category),
+    INDEX idx_featured (featured),
+    INDEX idx_verified (verified),
+    INDEX idx_level (level)
+);

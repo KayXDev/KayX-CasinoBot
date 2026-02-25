@@ -1,0 +1,38 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor
+.DS_Store
+.vscode/
+
+# Runtime logs / generated
+logs/
+*.log
+
+# Local config (may contain secrets)
+config.yml
+
+# Env files (keep .env.example)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# Next.js
+website/.next/
+website/out/
+
+# Coverage / builds
+coverage/
+dist/
+build/
+
+# Keys
+*.pem
+*.key

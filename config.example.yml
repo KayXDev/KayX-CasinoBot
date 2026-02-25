@@ -1,0 +1,1362 @@
+#####################################################################################
+##   /$$   /$$                     /$$   /$$       /$$$$$$$                        ##
+##  | $$  /$$/                    | $$  / $$      | $$__  $$                       ##
+##  | $$ /$$/   /$$$$$$  /$$   /$$|  $$/ $$/      | $$  \ $$  /$$$$$$  /$$    /$$  ##
+##  | $$$$$/   |____  $$| $$  | $$ \  $$$$/       | $$  | $$ /$$__  $$|  $$  /$$/  ##
+##  | $$  $$    /$$$$$$$| $$  | $$  >$$  $$       | $$  | $$| $$$$$$$$ \  $$/$$/   ##
+##  | $$\  $$  /$$__  $$| $$  | $$ /$$/\  $$      | $$  | $$| $$_____/  \  $$$/    ##
+##  | $$ \  $$|  $$$$$$$|  $$$$$$$| $$  \ $$      | $$$$$$$/|  $$$$$$$   \  $/     ##
+##  |__/  \__/ \_______/ \____  $$|__/  |__/      |_______/  \_______/    \_/      ##
+##                       /$$  | $$                                                 ##
+##                      |  $$$$$$/                                                 ##
+##                       \______/                                                  ##
+#####################################################################################
+## This is the configuration file for the ticket bot. You can configure the bot    ##
+## to your liking here. If you have any issues, please contact me on discord:      ##
+## https://discord.gg/wrld999                                                      ##
+#####################################################################################
+## Enjoy this bot, its made with ❤️ by KayX, rate this on BuiltByBit with good.⭐ ##
+#####################################################################################
+##                               999 | Casino Bot!                                 ##
+#####################################################################################
+
+
+# ═══════════════════════════════════════════════════════════════
+# 🤖 BOT CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+token: ""
+guildID: ""
+ownerID: "388422519553654786"
+adminRoles:
+  - "1382476289604325449"
+  - "1382476289604325449" # Secondary Admin Role
+
+database:
+  host: "localhost"
+  user: "root"
+  password: ""
+  database: "casino_bot"
+
+# ═══════════════════════════════════════════════════════════════
+# 🛡️ SISTEMA DE SEGURIDAD Y BETA TESTING
+# ═══════════════════════════════════════════════════════════════
+security:
+  testingMode: true              # CAMBIAR A false CUANDO SALGAS DE BETA
+  betaTesterRole: "1431445516323127354" # Crear rol de "Beta Testers" y poner su ID aquí
+  moderatorRole: "1382476289604325449"  # ID del rol de moderadores 
+  
+  # Límites durante fase de pruebas
+  testingLimits:
+    maxBet: 5000               # Apuesta máxima durante beta
+    maxBalance: 500000         # Balance máximo durante beta
+    maxCryptoInvestment: 25000 # Inversión crypto máxima durante beta
+    cooldownMultiplier: 2      # Cooldowns más largos durante beta
+  
+  # Logs y monitoreo
+  logChannel: "1382476368910090383"  # Canal para logs de seguridad
+  alertsEnabled: true                # Alertas automáticas
+  
+  # Sistema de control de errores global
+  errorSystem:
+    enabled: true                    # Activar sistema global de errores
+    maxErrorsPerHour: 50            # Máximo errores por hora antes de alertar
+    criticalErrorsChannel: "1382476368465363056"  # Canal para errores críticos
+    autoRecovery: true              # Activar recuperación automática
+    saveErrorLogs: true             # Guardar logs detallados en archivos
+    notifyOwnerOnCritical: true     # Notificar al owner en errores críticos
+  
+  # Anti-abuse
+  rateLimiting:
+    enabled: true
+    commandsPerMinute: 30      # Máximo comandos por minuto por usuario
+    warningThreshold: 50       # Advertir al superar este límite
+  
+  # Lista de usuarios autorizados (siempre pueden usar el bot)
+  whitelist:
+    - "388422519553654786"     # Tu ID - Owner del bot
+    # Añadir más IDs de confianza aquí
+  
+  # Lista negra (usuarios bloqueados)
+  blacklist:
+    # Añadir IDs problemáticos aquí
+  
+  # Canales restringidos 
+  restrictedChannels:
+    - "1427801119270109254"
+    - "1427364948023181439"
+
+# ═══════════════════════════════════════════════════════════════
+# 🛠️ MAINTENANCE SYSTEM CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+maintenance:
+  adminUsers:
+    - "388422519553654786" # Your Discord ID - replace with yours
+  emergencyCommands:
+    - "help"
+    - "maintenance"
+  notificationChannel: "1382476368465363056" # Channel ID for maintenance notifications (ex: "1234567890123456789")
+
+# ═══════════════════════════════════════════════════════════════
+# 💾 BACKUP SYSTEM CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+backup:
+  enabled: true                # Habilita/deshabilita backups automáticos
+  intervalMinutes: 360         # Intervalo de backup automático (en minutos) - 6 horas
+  keepLast: 10                 # Cuántos backups conservar en la base de datos
+  notifyChannel: "1382476368465363056"          # Canal para notificar backups (opcional)
+
+# ═══════════════════════════════════════════════════════════════
+# � CHANNEL RESTRICTIONS CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+channelRestrictions:
+  enabled: false                # Activa/desactiva las restricciones de canal
+  restrictedCommands:
+    blackjack: "1425231913576300635"      # Canal para blackjack
+    coinflip: "1425231913576300635"        # Canal para coinflip
+    crash: "1425231913576300635"              # Canal para crash
+    crypto-market: "1425231913576300635"     # Canal para crypto trading
+    crypto-news: "1425231913576300635"       # Canal para crypto news
+    crypto-analytics: "1425231913576300635"  # Canal para crypto analytics
+    dados: "1425231913576300635"              # Canal para dados
+    daily: "1425231913576300635"            # Canal para daily rewards
+    loteria: "1425231913576300635"          # Canal para loteria
+    rasca: "1425231913576300635"              # Canal para rasca
+    rob: "1425231913576300635"                  # Canal para rob
+    robbank: "1425231913576300635"              # Canal para robbank
+    ruleta: "1425231913576300635"            # Canal para ruleta
+    tragamonedas: "1425231913576300635"       # Canal para slots
+    weekly: "1425231913576300635"           # Canal para weekly rewards
+
+# ═══════════════════════════════════════════════════════════════
+# �🟢 STATUS CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+presenceUpdateInterval: 10000 # Interval in milliseconds (10 seconds)
+activity_statuses:
+  - text: "Type /help for commands"
+    type: "CUSTOM"
+  - text: "Join the daily lottery!"
+    type: "CUSTOM"
+  - text: "Casino open 24/7!"
+    type: "CUSTOM"
+  - text: "Invest in Crypto /crypto!"
+    type: "CUSTOM"
+  - text: "Made by KayX with ❤️"
+    type: "CUSTOM"
+
+# ═══════════════════════════════════════════════════════════════
+# 🎰 CASINO CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+casino:
+  moneda: "💰"                # Emoji or currency symbol
+  saldo_inicial: 10000        # Initial balance for new users
+  juegos:
+    - roulette
+    - slots
+    - blackjack
+    - dice
+    - coinflip
+    - crash
+    - lottery
+    - scratch
+
+# ═══════════════════════════════════════════════════════════════
+# 🎯 REFERRAL SYSTEM CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+referrals:
+  enabled: true               # Enable/disable referral system
+  
+  # Basic rewards
+  rewards:
+    referrer: 10000           # Money referrer gets when someone uses their code
+    referee: 5000             # Money new user gets when using a code
+  
+  # Progressive milestone bonuses (referral count: bonus amount)
+  milestones:
+    3: 15000
+    5: 25000
+    7: 35000
+    10: 50000
+    15: 75000
+    20: 100000
+    25: 150000
+    30: 200000
+    40: 300000
+    50: 400000
+    75: 600000
+    100: 1000000
+    150: 1500000
+    200: 2000000
+    250: 3000000
+    300: 4000000
+    400: 6000000
+    500: 8000000
+    750: 12000000
+    1000: 20000000
+  
+  # Code generation settings
+  codes:
+    length: 4                 # Length of referral codes
+    uppercase: true           # Use uppercase letters
+    includeNumbers: true      # Include numbers in codes
+    excludeConfusing: true    # Exclude confusing chars like 0, O, I, 1
+  
+  # Display settings
+  display:
+    showInBalance: true       # Show referral stats in /balance command
+    leaderboardDefault: 10    # Default number of users in /ref top
+    progressBarLength: 10     # Length of progress bars
+    titles:
+      recruiter: "🎯 **Reclutador**"
+      influencer: "⭐ **Influencer**"
+      magnate: "👑 **Magnate**"
+      diamond: "💎 **Leyenda**"
+      king: "🔥 **Rey del Casino**"
+      legend: "🌟 **Mito Viviente**"
+  
+  # Anti-abuse settings
+  limits:
+    maxReferralsPerDay: 50    # Max referrals one user can make per day
+    minAccountAgeHours: 0     # Minimum Discord account age in hours (0 = disabled)
+    checkAltAccounts: false   # Check for potential alt accounts
+
+# ═══════════════════════════════════════════════════════════════
+# � CASINO GAMES CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+# 🃏 Blackjack
+blackjack:
+  minBet: 10                  # Minimum bet
+  maxBet: 100000              # Maximum bet
+  dealerStand: 17             # Dealer stands at this value
+  payout: 2                   # Payout multiplier (2 = 1:1)
+
+# 🎯 Roulette
+roulette:
+  minBet: 10                  # Minimum bet
+  maxBet: 10000              # Maximum bet
+
+# 🎰 Slots (Slot Machine)
+slots:
+  minBet: 10                  # Minimum bet
+  maxBet: 10000              # Maximum bet
+  payouts:
+    jackpot: 10               # Multiplier for 3 matching (x10)
+    pair: 2                   # Multiplier for 2 matching (x2)
+
+# 🎲 Dice (Dice Game)
+dice:
+  minBet: 10                  # Minimum bet
+  maxBet: 10000              # Maximum bet
+  payouts:
+    six: 5                    # Multiplier for rolling 6 (x5)
+    four_five: 2              # Multiplier for rolling 4 or 5 (x2)
+
+# 🪙 Coinflip
+coinflip:
+  minBet: 10                  # Minimum bet
+  maxBet: 10000              # Maximum bet
+  payouts:
+    heads_tails: 2            # Multiplier for heads/tails (x2)
+    edge: 15                  # Multiplier for edge (x15)
+  probabilities:
+    heads: 0.495              # Probability of heads (49.5%)
+    tails: 0.495              # Probability of tails (49.5%)
+    edge: 0.01                # Probability of edge (1%)
+
+# 💥 Crash
+crash:
+  minBet: 10                  # Minimum bet
+  maxBet: 10000              # Maximum bet
+  maxMultiplier: 10.0         # Maximum multiplier before crash
+  crashProbability: 0.02      # Base crash probability per tick
+
+# 🎫 Lottery 2.0 - Modern multi-type system
+loteria:
+  numeros:
+    min_numero: 1              # Minimum selectable number
+    max_numero: 49             # Maximum selectable number
+    numeros_por_boleto: 6      # Amount of numbers per ticket
+    numeros_ganadores: 6       # Amount of winning numbers per draw
+  
+  # Limits and validations
+  limites:
+    max_boletos_por_sorteo: 5  # Maximum tickets per user per draw
+    min_aporte_admin: 1000     # Minimum money an admin can add to pot
+    max_boletos_mostrar: 10    # Maximum tickets shown in "my tickets"
+    
+  # Configurable texts and messages
+  mensajes:
+    titulo_compra: "Ticket Purchased"
+    descripcion_compra: "Your ticket has been successfully registered!"
+    titulo_sorteos: "Lottery 2.0 - Active Draws"
+    descripcion_sorteos: "Choose your lucky numbers and participate!"
+    titulo_mis_boletos: "My Lottery Tickets"
+    sin_boletos: "You don't have any tickets purchased yet."
+    uso_comprar: "Use `/loteria comprar` to participate in draws."
+    
+  # Configurable emojis
+  emojis:
+    diaria: "🌅"
+    semanal: "📅"
+    mensual: "🗓️"
+    boleto: "🎫"
+    pozo: "🏆"
+    numeros: "🎲"
+    fecha: "📅"
+    ganador: "👑"
+    premio: "💰"
+    
+  # Lottery type configuration
+  tipos:
+    diaria:
+      enabled: true            # Enable daily lottery
+      nombre: "Daily"          # Display name
+      descripcion: "Draw every day at 8 PM"
+      hora_sorteo: 20          # Draw hour (24h format)
+      precio_boleto: 5000      # Specific price for daily
+    semanal:
+      enabled: true            # Enable weekly lottery
+      nombre: "Weekly"         # Display name
+      descripcion: "Draw every Sunday at 9 PM"
+      dia_sorteo: 0            # Day of the week (0=Sunday, 1=Monday...)
+      hora_sorteo: 21          # Draw hour
+      precio_boleto: 15000     # Specific price for weekly
+    mensual:
+      enabled: true            # Enable monthly lottery
+      nombre: "Monthly"        # Display name
+      descripcion: "Draw on the 1st of each month at 10 PM"
+      dia_mes: 1               # Day of the month for the draw
+      hora_sorteo: 22          # Draw hour
+      precio_boleto: 50000     # Specific price for monthly
+      
+  # Prize distribution
+  premios:
+    seis_aciertos: 0.70        # 70% of pot for 6 matches
+    cinco_aciertos: 0.20       # 20% of pot for 5 matches  
+    cuatro_aciertos: 0.10      # 10% of pot for 4 matches
+    
+  # Display names for prizes
+  nombres_premios:
+    6: "6 matches"             # Text shown for 6 matches
+    5: "5 matches"             # Text shown for 5 matches
+    4: "4 matches"             # Text shown for 4 matches
+
+
+# 🎫 Scratch Fortune
+rasca:
+  precio: 200                   # Scratch ticket price
+  simbolos:
+    cherry:
+      emoji: "🍒"
+      multiplier: 2
+      rarity: 0.25
+    lemon:
+      emoji: "🍋" 
+      multiplier: 3
+      rarity: 0.20
+    orange:
+      emoji: "🍊"
+      multiplier: 4
+      rarity: 0.18
+    grapes:
+      emoji: "🍇"
+      multiplier: 5
+      rarity: 0.15
+    bell:
+      emoji: "🔔"
+      multiplier: 8
+      rarity: 0.10
+    star:
+      emoji: "⭐"
+      multiplier: 12
+      rarity: 0.07
+    diamond:
+      emoji: "💎"
+      multiplier: 20
+      rarity: 0.04
+    crown:
+      emoji: "👑"
+      multiplier: 50
+      rarity: 0.01
+
+# ═══════════════════════════════════════════════════════════════
+# 💰 BANKING & FINANCIAL CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+# 💰 Balance configuration
+balance:
+  showOthersFullBalance: true  # If true, shows bank and total of other users; if false, only hand
+
+# 💸 Withdraw configuration
+withdraw:
+  min: 1                      # Minimum to withdraw
+  max: 1000000                # Maximum to withdraw
+
+# 💳 Deposit configuration  
+deposit:
+  min: 1                      # Minimum to deposit
+  max: 1000000                # Maximum to deposit
+
+# 🎁 Give command configuration
+give:
+  min: 1                      # Minimum amount to give
+  max: 100000                 # Maximum amount to give
+  cooldown: 0                 # Cooldown in milliseconds (0 = no cooldown)
+
+# ═══════════════════════════════════════════════════════════════
+# 🔫 PVP & INTERACTION CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+# 🔫 Rob configuration
+rob:
+  minAmount: 50               # Minimum amount victim must have to be robbed
+  maxAmount: 5000             # Maximum amount that can be stolen
+  robberMinAmount: 200        # Minimum amount robber must have to rob
+  successRate: 0.34            # Success probability (34%)
+  maxPercentage: 0.15         # Maximum percentage of victim's hand money (15%)
+  failPenalty: 0.3            # Penalty if robbery fails (30% of attempted amount)
+  cooldown: 600000            # Cooldown between robberies (10 minutes in milliseconds)
+  allowBots: true            # Allow robbing bots (true/false)
+
+# 🏦 Bank Robbery System - Advanced Challenge Mode
+robbank:
+  # General configuration
+  cooldown: 3600000           # 1 hour cooldown between attempts
+  minUserMoney: 50000         # Minimum money required for robbing banks
+  maxAttempts: 4              # Maximum attempts per day (risk management)
+  jailRoleId: "1425602902877278299"  # "Jail" role ID (leave empty if you don't have role created)
+  
+  # Default failure penalties (used if bank doesn't specify individual values)
+  failPenalty: 0.15           # Default: Lose 15% of hand money when caught
+  jailTime: 2400000           # Default: 40 minutes unable to use commands
+  
+  # Banks with individual configurable penalties and jail times
+  banks:
+    local:
+      name: "Local Bank"
+      emoji: "🏪"
+      description: "Small neighborhood bank - Perfect for beginners"
+      minReward: 30000
+      maxReward: 80000
+      successRate: 0.75        # 75% base - VERY EASY
+      minigame: "lockpicking"  # 2 simple pins, generous time
+      difficulty: 1            # Easy level
+      failPenalty: 0.15        # 15% money penalty (configurable per bank)
+      jailTime: 1800000        # 30 minutes jail time (configurable per bank)
+      
+    regional:
+      name: "Regional Bank"  
+      emoji: "🏛️"
+      description: "Medium bank - Requires some skill and strategy"
+      minReward: 60000
+      maxReward: 180000
+      successRate: 0.50        # 50% base - MEDIUM
+      minigame: "hacking"      # 2-3 pattern stages, moderate time
+      difficulty: 2            # Medium level
+      failPenalty: 0.20        # 20% money penalty (configurable per bank)
+      jailTime: 2700000        # 45 minutes jail time (configurable per bank)
+      
+    national:
+      name: "National Bank"
+      emoji: "🏦" 
+      description: "Large national bank - High security challenge"
+      minReward: 120000
+      maxReward: 400000
+      successRate: 0.30        # 30% base - DIFFICULT
+      minigame: "stealth"      # 4 zones, tight timing
+      difficulty: 3            # Difficult level
+      failPenalty: 0.25        # 25% money penalty (configurable per bank)
+      jailTime: 3600000        # 60 minutes jail time (configurable per bank)
+      
+    reserve:
+      name: "Central Bank"
+      emoji: "🏢"
+      description: "Maximum security fortress - Master thieves only"
+      minReward: 300000
+      maxReward: 1200000
+      successRate: 0.15        # 15% base - EXTREMELY DIFFICULT
+      minigame: "decode"       # 5 complex codes, limited time
+      difficulty: 4            # Extreme level
+      failPenalty: 0.35        # 35% money penalty (configurable per bank)
+      jailTime: 4500000        # 75 minutes jail time (configurable per bank)
+
+# ═══════════════════════════════════════════════════════════════
+# 🛒 SHOP SYSTEM CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+shop:
+  categories:
+    banking:
+      name: "Banking & Storage"
+      emoji: "🏦"
+      items:
+        bank_upgrade_1:
+          name: "Bank Expansion I"
+          description: "Increase your bank capacity by 25,000 coins"
+          price: 5000
+          type: "permanent"
+        bank_upgrade_2:
+          name: "Bank Expansion II"
+          description: "Increase your bank capacity by 100,000 coins"
+          price: 15000
+          type: "permanent"
+        vault:
+          name: "Personal Vault"
+          description: "Maximum security - adds 500,000 bank capacity"
+          price: 75000
+          type: "permanent"
+    
+    boosts:
+      name: "Multipliers & Boosts"
+      emoji: "⚡"
+      items:
+        lucky_charm:
+          name: "Lucky Charm"
+          description: "1.5x earnings for 1 hour"
+          price: 5000
+          type: "temporary"
+          duration: 3600000
+          effect:
+            type: "earnings_multiplier"
+            value: 1.5
+        golden_dice:
+          name: "Golden Dice"
+          description: "2x earnings for 30 minutes"
+          price: 10000
+          type: "temporary"  
+          duration: 1800000
+          effect:
+            type: "earnings_multiplier"
+            value: 2
+        fortune_cookie:
+          name: "Fortune Cookie"
+          description: "3x earnings for 15 minutes"
+          price: 15000
+          type: "temporary"
+          duration: 900000
+          effect:
+            type: "earnings_multiplier"
+            value: 3
+    
+    protection:
+      name: "Security & Protection"
+      emoji: "🛡️"
+      items:
+        bodyguard:
+          name: "Personal Bodyguard"
+          description: "Complete protection from robbery for 2 hours"
+          price: 15000
+          type: "temporary"
+          duration: 7200000
+          effect:
+            type: "protection"
+            value: 1
+        insurance:
+          name: "Money Insurance"
+          description: "Recover 50% of stolen money for 24 hours"
+          price: 13500
+          type: "temporary"
+          duration: 86400000
+          effect:
+            type: "insurance"
+            value: 0.5
+    
+    special:
+      name: "Special Items"
+      emoji: "✨" 
+      items:
+        reset_token:
+          name: "Reset Token"
+          description: "Reset all command cooldowns instantly"
+          price: 50000
+          type: "consumable"
+        lucky_ticket:
+          name: "Lucky Ticket"
+          description: "Guarantee your next bet wins"
+          price: 100000
+          type: "consumable"
+    
+    heist_tools:
+      name: "Heist Equipment"
+      emoji: "🔧"
+      items:
+        lockpick_kit:
+          name: "Professional Lockpick Kit"
+          description: "+15% success rate for lockpicking minigames (1 hour)"
+          price: 12000
+          type: "equipment"
+          effect:
+            minigame: "lockpicking"
+            bonus: 0.15
+        hacking_laptop:
+          name: "Advanced Hacking Laptop"
+          description: "+20% success rate for hacking minigames (1 hour)"
+          price: 18000
+          type: "equipment"
+          effect:
+            minigame: "hacking"
+            bonus: 0.20
+        stealth_suit:
+          name: "Stealth Suit"
+          description: "+25% success rate for stealth minigames (1 hour)"
+          price: 25000
+          type: "equipment"
+          effect:
+            minigame: "stealth"
+            bonus: 0.25
+        decoder_device:
+          name: "Military Decoder"
+          description: "+30% success rate for decoding minigames (1 hour)"
+          price: 35000
+          type: "equipment"
+          effect:
+            minigame: "decode"
+            bonus: 0.30
+        master_thief_kit:
+          name: "Master Thief Complete Kit"
+          description: "+10% success rate for ALL robbery types (1 hour)"
+          price: 75000
+          type: "equipment"
+          effect:
+            minigame: "all"
+            bonus: 0.10
+            
+    heist_consumables:
+      name: "Heist Consumables"
+      emoji: "💊"
+      items:
+        adrenaline_shot:
+          name: "Adrenaline Shot"
+          description: "Extra time for next minigame (+50% time limit) - 1 hour duration"
+          price: 5000
+          type: "consumable"
+          effect:
+            type: "time_bonus"
+            value: 1.5
+        focus_pills:
+          name: "Focus Enhancement Pills"
+          description: "Reduces minigame difficulty by 1 level for next heist - 1 hour duration"
+          price: 6500
+          type: "consumable"
+          effect:
+            type: "difficulty_reduction"
+            value: 1
+        intel_report:
+          name: "Inside Intel Report"
+          description: "Reveals bank security level before attempting heist"
+          price: 4000
+          type: "consumable"
+          effect:
+            type: "intel"
+            value: "security_preview"
+        getaway_car:
+          name: "High-Speed Getaway Car"
+          description: "Reduces jail time by 50% if caught"
+          price: 10000
+          type: "consumable"
+          effect:
+            type: "jail_reduction"
+            value: 0.5
+        fake_id:
+          name: "Fake Identity Papers"
+          description: "Skip robbery cooldown once"
+          price: 8000
+          type: "consumable"
+          effect:
+            type: "cooldown_skip"
+            value: 1
+
+# ═══════════════════════════════════════════════════════════════
+# 🛒 SHOP PURCHASE COOLDOWNS CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+# ⏱️ Purchase cooldowns by item (in milliseconds)
+shop_cooldowns:
+  # Basic items - Low power, short cooldown (5-15 minutes)
+  basic_upgrades:
+    cooldown: 900000  # 15 minutes
+    items: ["bank_upgrade_1"]
+  
+  # Standard items - Medium power, medium cooldown (30 minutes - 2 hours)
+  standard:
+    cooldown: 3600000  # 1 hour  
+    items: ["bank_upgrade_2", "lucky_charm", "bodyguard", "lockpick_kit", "adrenaline_shot", "intel_report"]
+  
+  # Premium items - High power, long cooldown (4-12 hours)
+  premium:
+    cooldown: 14400000  # 4 hours
+    items: ["vault", "golden_dice", "insurance", "hacking_laptop", "stealth_suit", "focus_pills", "getaway_car", "fake_id"]
+  
+  # Ultra rare - Very high power, very long cooldown (1-3 days)
+  ultra_rare:
+    cooldown: 86400000  # 24 hours (1 day)
+    items: ["fortune_cookie", "decoder_device", "master_thief_kit"]
+  
+  # Game breaking - Extremely powerful, extreme cooldown (1 week)
+  game_breaking:
+    cooldown: 604800000  # 1 week (7 days)
+    items: ["reset_token", "lucky_ticket"]
+
+# ═══════════════════════════════════════════════════════════════
+# ⚙️ ADMIN & SYSTEM CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+# 👑 Admin give command configuration
+admin_give:
+  maxAmount: 1000000          # Maximum amount an admin can give at once
+
+# ✨ Effects command configuration  
+effects:
+  maxDisplayItems: 10         # Maximum number of active effects to display
+
+# 🏆 Leaderboard configuration
+leaderboard:
+  maxUsers: 10                # Maximum number of users to show in leaderboards
+  refreshCooldown: 30000      # Cooldown to refresh leaderboard (30 seconds)
+
+# ❓ Help command configuration
+help:
+  embedColor: 0x4169ff        # Help embed color
+  showHiddenCommands: false   # Show hidden commands to normal users
+
+# ═══════════════════════════════════════════════════════════════
+# 👥 FRIENDS SYSTEM CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+
+# 🤝 Friend system settings
+friends:
+  maxFriendsPerUser: 100        # Maximum number of friends per user
+  maxPendingRequests: 20        # Maximum number of pending requests per user
+  requestCooldown: 300000       # Cooldown between requests to same user (5 minutes)
+  enableFriendNotifications: true  # Notify when someone adds you as friend
+  
+  # 📢 Public notifications settings
+  notifications:
+    enablePublicRequests: true    # Show friendship requests in public chat
+    enablePublicAcceptance: true  # Show when friendships are accepted in public chat
+    enablePublicRemoval: false    # Show when friendships are removed (usually private)
+  
+  # 📊 Friend list display settings
+  friendsPerPage: 10            # Friends shown per page in /friends
+  showFriendSince: true         # Show date when they became friends
+  showFriendStatus: true        # Show online/offline status of friends
+  
+  # 🎮 Friend benefits and features
+  benefits:
+    enableFriendRankings: true  # Special rankings between friends
+    enableFriendChallenges: false # Direct challenges between friends (future)
+    enableFriendBonuses: false  # Special bonuses for playing with friends (future)
+    enableGroupActivities: false # Group activities (future)
+
+# ═══════════════════════════════════════════════════════════════
+# 🎁 DAILY & WEEKLY REWARDS SYSTEM
+# ═══════════════════════════════════════════════════════════════
+rewards:
+  # 📅 Daily Rewards Configuration
+  daily:
+    enabled: true                # Enable daily rewards
+    minAmount: 1124               # Minimum amount of daily coins
+    maxAmount: 7468             # Maximum amount of daily coins
+    cooldownHours: 24           # Cooldown hours (24 = 1 day)
+    bonusChance: 15             # % probability of extra bonus (0-100)
+    bonusMultiplier: 1.75       # Bonus multiplier (1.75 = +75%)
+    
+  # 📅 Weekly Rewards Configuration  
+  weekly:
+    enabled: true                # Enable weekly rewards
+    minAmount: 3500             # Minimum amount of weekly coins
+    maxAmount: 49999            # Maximum amount of weekly coins
+    cooldownHours: 168          # Cooldown hours (168 = 7 days)
+    bonusChance: 25             # % probability of extra bonus (0-100)
+    bonusMultiplier: 2.25       # Bonus multiplier (2.25 = +125%)
+    
+  # 🎨 Rewards Display Settings
+  display:
+    showNextAvailable: true     # Show when next reward will be available
+    showStreak: true           # Show consecutive days/weeks streak
+    embedColor: 0x00ff00       # Embed color (green)
+    enableAnimations: true     # Additional visual effects
+
+# ═══════════════════════════════════════════════════════════════
+# 📝 SELECTIVE LOGGING CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+logging:
+  enabled: true
+  channelId: "1425633871160148069"  # Replace with the channel ID where you want the logs
+  categories:
+    admin: true      # Logs for administration commands
+    gambling: true   # Logs for gambling/game commands
+
+# ═══════════════════════════════════════════════════════════════
+# 🪙 CRYPTO EXCHANGE CONFIGURATION
+# ═══════════════════════════════════════════════════════════════
+crypto:
+  # 💰 Trading Fees & Costs
+  fees:
+    buyFee: 0.5              # % fee when buying (0.5 = 0.5%)
+    sellFee: 0.75            # % fee when selling (0.75 = 0.75%)
+    volatilityMultiplier: 2.0 # Fee multiplier in high volatility
+    minFee: 1                # Minimum fee in absolute coins
+    maxFee: 1000             # Maximum fee in absolute coins
+
+  # ⚡ Market Dynamics (Realistic and Smooth Volatility)
+  market:
+    updateInterval: 30000    # Price update interval (ms) - Slower
+    volatilityBase: 0.15     # Reduced base volatility (0.15 = ±0.15% per update)
+    minPricePercent: 20      # Minimum price: 20% of base price (more conservative)
+    maxPricePercent: 300     # Maximum price: 300% of base price (more conservative)
+    volatilityMultipliers:
+      LOW: 0.4               # Very conservative cryptos (±0.06%)
+      MEDIUM: 0.7            # Normal volatility (±0.105%)
+      HIGH: 1.0              # Risky cryptos (±0.15%)
+      EXTREME: 1.3           # High volatility (±0.195%)
+      INSANE: 1.6            # Maximum volatility (±0.24%)
+    
+    crashChance: 0.003       # 0.3% chance of crash per update (rarer)
+    crashIntensity: 8        # Maximum crash % (8 = -8% max)
+    pumpChance: 0.002        # 0.2% chance of extreme pump (rarer)
+    pumpIntensity: 12        # Maximum pump % (12 = +12% max)
+    
+    whaleChance: 0.001       # 0.1% chance of whale manipulation (very rare)
+    whaleImpact: 3           # Whale impact % (±3% max)
+
+  # 🎯 Trading Restrictions (Adjusted for 2025 prices)
+  restrictions:
+    minInvestment: 500       # Minimum investment per trade (increased for high prices)
+    maxInvestment: 10000    # Maximum investment per trade (increased for BTC ~$98k)
+    tradeCooldown: 30        # Cooldown between trades (seconds)
+    quickSellPenalty: 10     # % penalty for selling <1 minute after buying
+    maxDailyTrades: 3       # Maximum trades per day per user
+    slippageMax: 2.0         # Maximum % slippage allowed
+
+  # 📅 Market Schedule Configuration (Market Hours)
+  schedule:
+    enabled: true                    # Enable/disable market hours
+    timezone: "Europe/Madrid"        # Timezone for calculations
+    
+    # 🕐 Daily opening and closing hours (24h format)
+    enableDailyHours: true            # Activa/desactiva el horario de dailyHours
+    dailyHours:
+      open: "09:00"                  # Opening time (9:00 AM)
+      close: "23:59"                 # Closing time (23:59 = un minuto antes de medianoche)
+  
+  # 📅 Days of the week when market is CLOSED
+  closedDays:
+    - 0  # Sunday (0=Sunday, 1=Monday, 2=Tuesday, ... 6=Saturday)
+    - 6  # Saturday
+  
+  # 🎄 Specific dates when market is closed (MM-DD format)
+  specialClosedDates:
+    - "01-01"  # New Year
+    - "12-25"  # Christmas
+    - "12-24"  # Christmas Eve
+    - "05-01"  # Labor Day
+  
+  # ⏰ Extended closure periods (maintenance, special events)
+  extendedClosure:
+    enabled: false                 # Enable extended closure
+    startDate: "2025-01-15"        # Start date (YYYY-MM-DD)
+    startTime: "02:00"             # Start time
+    endDate: "2025-01-15"          # End date
+    endTime: "06:00"               # End time
+    reason: "Scheduled maintenance"  # Closure reason
+  
+    # 🔄 Behavior configuration during closure
+    closedBehavior:
+      allowPriceUpdates: false       # Whether to update prices during closure
+      allowViewing: true             # Whether to allow viewing market (no trading)
+      showNextOpen: true             # Show when market reopens
+      pauseEvents: true              # Pause special market events
+
+  # 📊 Cryptocurrency Settings (Realistic 2025 Prices and Volatility)
+  cryptocurrencies:
+    BTC:
+      name: "Bitcoin"
+      symbol: "BTC"
+      emoji: "🟠"
+      basePrice: 98500.0
+      tier: "LEGENDARY"
+      volatility: "LOW"
+      personality: "stable"
+      volatilityMultiplier: 0.5    # Muy estable (±0.03%)
+      trendFollowing: 0.2
+      eventSensitivity: 0.4
+      recoverySpeed: 1.1
+      maxSupply: 21000000
+      circulatingSupply: 19800000
+    
+    ETH:
+      name: "Ethereum"
+      symbol: "ETH" 
+      emoji: "💙"
+      basePrice: 3450.0
+      tier: "LEGENDARY"
+      volatility: "LOW"
+      personality: "stable"
+      volatilityMultiplier: 0.6    # Volatilidad reducida (±0.06%)
+      trendFollowing: 0.3
+      eventSensitivity: 0.6
+      recoverySpeed: 1.0
+      maxSupply: null
+      circulatingSupply: 120500000
+    
+    BNB:
+      name: "Binance Coin"
+      symbol: "BNB"      
+      emoji: "🟡"
+      basePrice: 720.0
+      tier: "EPIC"
+      volatility: "LOW"
+      personality: "conservative"
+      volatilityMultiplier: 0.4    # Muy conservadora (±0.024%)
+      trendFollowing: 0.15
+      eventSensitivity: 0.5
+      recoverySpeed: 1.3
+      maxSupply: 200000000
+      circulatingSupply: 153900000
+    
+    SOL:
+      name: "Solana"
+      symbol: "SOL"
+      emoji: "💜"
+      basePrice: 245.0
+      tier: "EPIC"
+      volatility: "MEDIUM"
+      personality: "balanced"
+      volatilityMultiplier: 0.8    # Volatilidad moderada (±0.084%)
+      trendFollowing: 0.4
+      eventSensitivity: 0.8
+      recoverySpeed: 0.9
+      maxSupply: null
+      circulatingSupply: 475000000
+    
+    ADA:
+      name: "Cardano"
+      symbol: "ADA"
+      emoji: "🔵"
+      basePrice: 1.15
+      tier: "RARE"
+      volatility: "MEDIUM"
+      personality: "academic"
+      volatilityMultiplier: 0.9    # Volatilidad académica (±0.094%)
+      trendFollowing: 0.35
+      eventSensitivity: 0.7
+      recoverySpeed: 0.8
+      maxSupply: 45000000000
+      circulatingSupply: 36800000000
+    
+    MATIC:
+      name: "Polygon"
+      symbol: "MATIC"
+      emoji: "🟣"
+      basePrice: 0.85
+      tier: "RARE"
+      volatility: "HIGH"
+      personality: "scaling"
+      volatilityMultiplier: 1.2    # Alta volatilidad L2 (±0.126%)
+      trendFollowing: 0.6
+      eventSensitivity: 1.1
+      recoverySpeed: 1.4
+      maxSupply: 10000000000
+      circulatingSupply: 9300000000
+    
+    LINK:
+      name: "Chainlink"
+      symbol: "LINK"
+      emoji: "🔗"
+      basePrice: 22.40
+      tier: "EPIC"
+      volatility: "HIGH"
+      personality: "oracle"
+      volatilityMultiplier: 1.1    # Volatilidad de oráculos (±0.115%)
+      trendFollowing: 0.5
+      eventSensitivity: 0.9
+      recoverySpeed: 1.0
+      maxSupply: 1000000000
+      circulatingSupply: 570000000
+    
+    AVAX:
+      name: "Avalanche"
+      symbol: "AVAX"
+      emoji: "🔺"
+      basePrice: 42.80
+      tier: "EPIC"
+      volatility: "HIGH"
+      personality: "competitive"
+      volatilityMultiplier: 1.3    # Competitiva con ETH (±0.136%)
+      trendFollowing: 0.7
+      eventSensitivity: 1.2
+      recoverySpeed: 1.1
+      maxSupply: 720000000
+      circulatingSupply: 400000000
+    
+    DOT:
+      name: "Polkadot"
+      symbol: "DOT"
+      emoji: "🔴"
+      basePrice: 8.95
+      tier: "RARE"
+      volatility: "MEDIUM"
+      personality: "interoperable"
+      volatilityMultiplier: 0.95   # Interoperabilidad (±0.099%)
+      trendFollowing: 0.45
+      eventSensitivity: 0.8
+      recoverySpeed: 0.9
+      maxSupply: null
+      circulatingSupply: 1400000000
+    
+    ATOM:
+      name: "Cosmos"
+      symbol: "ATOM"
+      emoji: "⚛️"
+      basePrice: 7.25
+      tier: "RARE"
+      volatility: "HIGH"
+      personality: "hub"
+      volatilityMultiplier: 1.15   # Hub de blockchain (±0.120%)
+      trendFollowing: 0.55
+      eventSensitivity: 1.0
+      recoverySpeed: 1.2
+      maxSupply: null
+      circulatingSupply: 390000000
+    
+    ALGO:
+      name: "Algorand"
+      symbol: "ALGO"
+      emoji: "⚫"
+      basePrice: 0.42
+      tier: "COMMON"
+      volatility: "EXTREME"
+      personality: "pure_proof_of_stake"
+      volatilityMultiplier: 1.6    # PPoS volatilidad (±0.167%)
+      trendFollowing: 0.8
+      eventSensitivity: 1.3
+      recoverySpeed: 1.5
+      maxSupply: 10000000000
+      circulatingSupply: 8500000000
+    
+    XRP:
+      name: "Ripple"
+      symbol: "XRP"
+      emoji: "💧"
+      basePrice: 2.15
+      tier: "RARE"
+      volatility: "EXTREME"
+      personality: "banking"
+      volatilityMultiplier: 1.4    # Regulación bancaria (±0.147%)
+      trendFollowing: 0.3
+      eventSensitivity: 1.5
+      recoverySpeed: 0.7
+      maxSupply: 100000000000
+      circulatingSupply: 57000000000
+
+  # 🎪 Market Events Configuration
+  events:
+    enabled: true
+    checkInterval: 300000    # Check for events every 5 minutes
+    globalCooldown: 1800     # 30 min cooldown between any events
+    
+    # Event Types
+    types:
+      btc_whale:
+        name: "Bitcoin Whale Movement"
+        description: "Massive BTC transfers detected! Whale activity causes volatility!"
+        affectedCryptos: ["BTC"]
+        priceImpactMin: -15.0
+        priceImpactMax: 25.0
+        duration: 45
+        probability: 15
+        cooldown: 8
+      
+      eth_upgrade:
+        name: "Ethereum Network Activity"
+        description: "High network usage and DeFi activity pumps ETH price!"
+        affectedCryptos: ["ETH"]
+        priceImpactMin: 5.0
+        priceImpactMax: 30.0
+        duration: 60
+        probability: 18
+        cooldown: 6
+      
+      market_pump:
+        name: "Crypto Market Pump"
+        description: "Positive market sentiment drives all cryptos higher!"
+        affectedCryptos: null  # null = all cryptos
+        priceImpactMin: 8.0
+        priceImpactMax: 35.0
+        duration: 40
+        probability: 20
+        cooldown: 5
+      
+      flash_crash:
+        name: "Flash Crash"
+        description: "Sudden market panic causes temporary price drops!"
+        affectedCryptos: null  # null = all cryptos
+        priceImpactMin: -40.0
+        priceImpactMax: -15.0
+        duration: 20
+        probability: 8
+        cooldown: 12
+      
+      binance_news:
+        name: "Binance Exchange Rally"
+        description: "Major Binance announcements boost BNB!"
+        affectedCryptos: ["BNB"]
+        priceImpactMin: 10.0
+        priceImpactMax: 50.0
+        duration: 35
+        probability: 12
+        cooldown: 10
+      
+      solana_surge:
+        name: "Solana Ecosystem Boom"
+        description: "New Solana projects drive SOL price up!"
+        affectedCryptos: ["SOL"]
+        priceImpactMin: -10.0
+        priceImpactMax: 80.0
+        duration: 30
+        probability: 16
+        cooldown: 7
+      
+      cardano_upgrade:
+        name: "Cardano Smart Contract Boom"
+        description: "Major Cardano ecosystem developments boost ADA!"
+        affectedCryptos: ["ADA"]
+        priceImpactMin: 8.0
+        priceImpactMax: 45.0
+        duration: 50
+        probability: 14
+        cooldown: 9
+      
+      polygon_scaling:
+        name: "Layer 2 Adoption Wave"
+        description: "Mass adoption of Polygon scaling solutions!"
+        affectedCryptos: ["MATIC"]
+        priceImpactMin: 12.0
+        priceImpactMax: 60.0
+        duration: 35
+        probability: 18
+        cooldown: 6
+      
+      chainlink_integration:
+        name: "Oracle Network Expansion"
+        description: "Major enterprise integrations boost Chainlink!"
+        affectedCryptos: ["LINK"]
+        priceImpactMin: 5.0
+        priceImpactMax: 35.0
+        duration: 45
+        probability: 12
+        cooldown: 8
+      
+      avalanche_defi:
+        name: "Avalanche DeFi Explosion"
+        description: "Huge TVL growth in Avalanche DeFi protocols!"
+        affectedCryptos: ["AVAX"]
+        priceImpactMin: 15.0
+        priceImpactMax: 55.0
+        duration: 40
+        probability: 15
+        cooldown: 7
+      
+      polkadot_parachain:
+        name: "Parachain Slot Auction"
+        description: "Polkadot parachain auctions drive DOT demand!"
+        affectedCryptos: ["DOT"]
+        priceImpactMin: 10.0
+        priceImpactMax: 40.0
+        duration: 60
+        probability: 13
+        cooldown: 10
+      
+      cosmos_ibc:
+        name: "Inter-Blockchain Protocol Surge"
+        description: "Cross-chain activity boosts Cosmos ecosystem!"
+        affectedCryptos: ["ATOM"]
+        priceImpactMin: 8.0
+        priceImpactMax: 50.0
+        duration: 35
+        probability: 16
+        cooldown: 8
+      
+      algorand_cbdc:
+        name: "Central Bank Digital Currency News"
+        description: "Government CBDC partnerships favor Algorand!"
+        affectedCryptos: ["ALGO"]
+        priceImpactMin: 20.0
+        priceImpactMax: 80.0
+        duration: 25
+        probability: 8
+        cooldown: 15
+      
+      xrp_regulation:
+        name: "Banking Regulation Clarity"
+        description: "Positive regulatory news boosts XRP adoption!"
+        affectedCryptos: ["XRP"]
+        priceImpactMin: 25.0
+        priceImpactMax: 120.0
+        duration: 45
+        probability: 6
+        cooldown: 20
+      
+      altcoin_season:
+        name: "Altcoin Season Rally"
+        description: "Market rotation into alternative cryptocurrencies!"
+        affectedCryptos: ["ADA", "MATIC", "LINK", "AVAX", "DOT", "ATOM", "ALGO", "XRP"]
+        priceImpactMin: 15.0
+        priceImpactMax: 65.0
+        duration: 90
+        probability: 10
+        cooldown: 25
+      
+      defi_summer:
+        name: "DeFi Summer Renaissance"
+        description: "Massive DeFi protocol adoption across ecosystems!"
+        affectedCryptos: ["ETH", "AVAX", "MATIC", "ATOM"]
+        priceImpactMin: 20.0
+        priceImpactMax: 75.0
+        duration: 120
+        probability: 8
+        cooldown: 30
+
+  # 🏆 Achievement System
+  achievements:
+    enabled: true
+    
+    # 📢 Public Announcements Configuration
+    announcements:
+      enabled: true                          # Enable public announcements
+      channelId: "1427354519695523860" # Channel ID where to announce achievements (ex: "1234567890123456789")
+      announceAll: true                     # true = all achievements, false = only important ones
+      importantAchievements:                # Achievements considered "important"
+        - "whale_status"
+        - "portfolio_master" 
+        - "profit_master"
+        - "volume_king"
+      showUserStats: true                   # Show user statistics in announcement
+      celebrationLevel: "high"              # "low", "medium", "high" - celebration level
+    
+    # Achievement definitions
+    types:
+      first_buy:
+        name: "First Steps"
+        description: "Made your first crypto purchase"
+        progressRequired: 1
+        reward: 500
+      
+      diamond_hands:
+        name: "Diamond Hands 💎"
+        description: "Hold a position for 7+ days without selling"
+        progressRequired: 1
+        reward: 2000
+      
+      whale_status:
+        name: "Whale Status 🐋"
+        description: "Portfolio value exceeds 100,000 coins"
+        progressRequired: 1
+        reward: 10000
+      
+      perfect_timing:
+        name: "Perfect Timing ⏰"
+        description: "Buy cryptocurrency during a market crash"
+        progressRequired: 1
+        reward: 5000
+      
+      day_trader:
+        name: "Day Trader 📈"
+        description: "Complete 10+ trades in one day"
+        progressRequired: 10
+        reward: 1500
+      
+      portfolio_master:
+        name: "Portfolio Master 🎯"
+        description: "Own all 4 available cryptocurrencies"
+        progressRequired: 1
+        reward: 3000
+
+      # New achievements
+      profit_master:
+        name: "Profit Master 💰"
+        description: "Make 50,000+ coins profit from crypto trading"
+        progressRequired: 50000
+        reward: 5000
+        
+      volume_king:
+        name: "Volume King 👑"
+        description: "Trade over 1,000,000 coins in total volume"
+        progressRequired: 1000000
+        reward: 8000
+
+  # ═══════════════════════════════════════════════════════════════
+  # 📰 CRYPTO NEWS & ALERTS SYSTEM
+  # ═══════════════════════════════════════════════════════════════
+  news_alerts:
+    enabled: true
+    
+    # Channels where news and alerts are published
+    channels:
+      news_channel: "1427364948023181439"     # Channel for automatic news
+      alerts_channel: "1427364966306156736"   # Channel for price alerts
+      
+    # Automatic news configuration
+    news_generation:
+      enabled: true
+      frequency_minutes: 30           # Generate news every 30 minutes (more frequent)
+      based_on_events: true          # Generate news based on market events
+      based_on_price_changes: true   # Generate news based on significant price changes
+      min_price_change_percent: 3.0  # Minimum price change to generate news (3% - more sensitive)
+      
+    # Price alerts configuration
+    price_alerts:
+      enabled: true
+      check_frequency_seconds: 60    # Check prices every 60 seconds (reducido para evitar spam)
+      min_alert_interval_minutes: 5  # Mínimo 5 minutos entre alertas de la misma cripto
+      max_alerts_per_hour: 10        # Máximo 10 alertas por hora
+      
+      # Las alertas y noticias por cripto ahora se generan automáticamente.
+      # No es necesario definir milestones ni crashes manualmente para cada moneda.
+      # El sistema usará los precios base de cada cripto para calcular los umbrales.
+
+    # Market sentiment analysis
+    sentiment_analysis:
+      enabled: true
+      
+      # Ranges to determine sentiment based on average price changes
+      sentiment_ranges:
+        extreme_fear: -15.0      # Average change less than -15% = Extreme Fear
+        fear: -8.0               # Average change -15% to -8% = Fear
+        neutral: 0.0             # Average change -8% to 8% = Neutral
+        greed: 8.0               # Average change 8% to 15% = Greed
+        extreme_greed: 15.0      # Average change greater than 15% = Extreme Greed
+        
+      # Messages for each sentiment level
+      sentiment_messages:
+        extreme_fear: "😱 TOTAL PANIC - Prices are collapsing"
+        fear: "😰 FEAR - Market in red territory" 
+        neutral: "😐 BALANCE - Sideways market without clear trend"
+        greed: "😋 GREED - Bulls are in control"
+        extreme_greed: "🤑 TOTAL EUPHORIA - Market in rocket mode!"
+
+    # News templates for events
+    news_templates:
+      market_crash:
+        - "💥 FLASH CRASH: Crypto market loses {percentage}% in {timeframe}"
+        - "📉 BLOOD IN THE STREETS: Massive {percentage}% drop shakes the market"
+        - "🔴 RED ALERT: {percentage}% crash generates panic among traders"
+        
+      market_pump:  
+        - "🚀 TO THE MOON: Market explodes with {percentage}% rise in {timeframe}"
+        - "💎 DIAMOND HANDS REWARDED: Massive {percentage}% pump rewards holders"
+        - "🟢 BULL RUN ACTIVATED: {percentage}% rise ignites crypto fever"
+        
+      single_crypto_pump:
+        - "⚡ {crypto_name} EXPLODES: {percentage}% rise in {timeframe}"
+        - "🎯 {crypto_name} BREAKS OUT: Breaks resistance with +{percentage}%"
+        - "🚀 {crypto_name} ROCKETS: Traders can't believe this +{percentage}%"
+        
+      single_crypto_crash:
+        - "📉 {crypto_name} COLLAPSES: {percentage}% drop leaves holders stunned"
+        - "⚠️ {crypto_name} ALARM: {percentage}% losses in {timeframe}"
+        - "🔴 {crypto_name} BLOODBATH: {percentage}% crash generates panic"
+
+      volume_spike:
+        - "📊 VOLUME EXPLOSION: Trading activity skyrockets {percentage}%"
+

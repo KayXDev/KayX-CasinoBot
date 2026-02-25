@@ -1,0 +1,33 @@
+{
+  "name": "casino-discord-bot",
+  "version": "1.0.0",
+  "description": "Bot de casino para Discord usando discord.js v14 y Node.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently --names \"🤖BOT,🌐WEB\" --prefix-colors \"cyan,magenta\" \"npm run start:bot\" \"npm run start:web\"",
+    "dev": "concurrently --names \"🤖BOT,🌐WEB\" --prefix-colors \"cyan,magenta\" \"npm run start:bot\" \"npm run dev:web\"",
+    "start:bot": "node index.js",
+    "start:web": "cd website && npm start",
+    "dev:web": "cd website && npm run dev",
+    "bot": "node index.js",
+    "web": "cd website && npm run dev"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@paypal/react-paypal-js": "^8.9.2",
+    "canvas": "^3.2.0",
+    "discord.js": "^14.0.0",
+    "dotenv": "^17.2.3",
+    "js-yaml": "^4.1.0",
+    "mysql2": "^3.15.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "sqlite3": "^5.1.7",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
